@@ -7,11 +7,11 @@ class AddBookModel extends ChangeNotifier {
 
   Future addBook() async {
     if (title == null || title == "") {
-      throw '本のタイトルが空です。';
+      throw '商品名が入力されていません。';
     }
 
     if (author == null || author!.isEmpty) {
-      throw '本の著者が空です。';
+      throw '価格が入力されていません。';
     }
 
     await FirebaseFirestore.instance.collection('books').add({
